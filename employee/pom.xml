@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project coordinates -->
+    <groupId>com.resultset</groupId>
+    <artifactId>employee</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>employee</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- Dependencies -->
+    <dependencies>
+        
+        <!-- MySQL JDBC Driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version> <!-- Update to the latest version if needed -->
+        </dependency>
+
+        <!-- JUnit for unit testing (JUnit 5) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version> <!-- Update to the latest version -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version> <!-- Update to the latest version -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit Vintage Engine (for running JUnit 4 tests alongside JUnit 5) -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+
+    <!-- Build settings -->
+    <build>
+        <plugins>
+            <!-- Compiler plugin to set Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source> <!-- Set this to the version of Java you are using -->
+                    <target>1.8</target> <!-- Set this to the version of Java you are using -->
+                </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>3.5.0</version>
+              <configuration>
+                  <mainClass>com.resultset.Main</mainClass> <!-- Replace with the fully qualified class name containing main method -->
+              </configuration>
+            </plugin>
+        </plugins>
+        
+    </build>
+
+</project>
